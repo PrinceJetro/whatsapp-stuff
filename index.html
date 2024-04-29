@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaCk</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            background-color: black;
+        }
+        select{
+            height: 100px;
+            width: 75%;
+            background-color: rgb(44, 189, 44);
+            font-size: 24px;
+        }
+
+        @media screen and (max-width: 480px){
+            select{
+            height: 100px;
+            width: 100%;
+            background-color: rgb(44, 189, 44);
+            font-size: 24px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <script>
+const schoolslink = [
+      { "name": "Hope and Faith Senior High School", "link": "https://wa.me/233244539324" },
+      { "name": "Abomosu STEM Senior High School", "link": "https://wa.me/233204143424" },
+      { "name": "Ghanatta Secondary School", "link": "https://wa.me/233302767266" },
+      { "name": "Akrofuom Senior High Technical School", "link": "https://wa.me/233244055393" },
+      { "name": "SENYA SENIOR HIGH SCHOOL", "link": "https://wa.me/233245940586" },
+      { "name": "St. Andrew's Senior High School", "link": "https://wa.me/233545451110" },
+      { "name": "Krobo Girls Presbyterian Senior High School", "link": "https://wa.me/233233159211" },
+  { "name": "Tweneboa Kodua Senior High School", "link": "https://wa.me/233239635996" },
+  { "name": "PEKI SENIOR HIGH SCHOOL(PESCO)", "link": "https://wa.me/233544270353" },
+  { "name": "Nkoranza Effah Presby Junior High School,Nkoranza,Ghana", "link": "https://wa.me/233243982683" },
+  { "name": "SERWAA KESSE GIRLS SENIOR HIGH SCHOOL", "link": "https://wa.me/233243832368" },
+  { "name": "AMOANA PRASO SENIOR HIGH SCHOOL", "link": "https://wa.me/233245042008" },
+  { "name": "Offinso State A Junior High School", "link": "https://wa.me/233244180931" },
+  { "name": "Tijjaniya Senior High school", "link": "https://wa.me/233274462941" },
+  { "name": "St. Paul's Senior High School", "link": "https://wa.me/233507696119" },
+  { "name": "GHANA SENIOR HIGH SCHOOL, TAMALE, GHANA", "link": "https://wa.me/233246838726" },
+  { "name": "Zamse Senior High Technical School", "link": "https://wa.me/233545439631" },
+  { "name": "Ghana College Senior High Technical School", "link": "https://wa.me/233541193158" },
+  { "name": "Ntruboman Senior High School", "link": "https://wa.me/233248144528" },
+  { "name": "Mfantsiman Girls' Secondary School", "link": "https://wa.me/233332192017" },
+  { "name": "Nsawam Secondary School", "link": "https://wa.me/233342122146" },
+  { "name": "Kumasi High School", "link": "https://wa.me/233244198684" },
+  { "name": "Ahamansu Islamic Senior High School", "link": "https://wa.me/233246507100" },
+  { "name": "Hwidiem Senior High School", "link": "https://wa.me/233243216530" },
+  { "name": "Apostolic Senior High School, Teshie", "link": "https://wa.me/233242801995" },
+  { "name": "Ghana National College", "link": "https://wa.me/233553646952" },
+  { "name": "KWARTENG ANKOMAH SENIOR HIGH SCHOOL", "link": "https://wa.me/233242188993" },
+  { "name": "Tepa Senior High School", "link": "https://wa.me/233277858643" },
+  { "name": "Kurofa Methodist Senior High/ Technical School", "link": "https://wa.me/233322392741" },
+  { "name": "Our Lady of Grace Senior High School", "link": "https://wa.me/233558093814" },
+  { "name": "Vakpo Senior High School", "link": "https://wa.me/233541642313" },
+  { "name": "Akro Senior High Technical School", "link": "https://wa.me/233249096958" },
+  { "name": "Odumaseman Senior High School", "link": "https://wa.me/233243929295" },
+  { "name": "Samuel Otu Presbyterian Senior High school", "link": "https://wa.me/233200120900" },
+  { "name": "Dompoase Senior High School", "link": "https://wa.me/233542812351" },
+  { "name": "Oduko Boatemaa Senior High School", "link": "https://wa.me/233244195118" },
+  { "name": "Agona Senior High Technical School", "link": "https://wa.me/233322096498" },
+  { "name": "Ada Senior High School", "link": "https://wa.me/233302837271" },
+  { "name": "Bechem Presby Senior High School", "link": "https://wa.me/233506548387" },
+  { "name": "Deks Senior High School", "link": "https://wa.me/233244683541" },
+  { "name": "Kadjebi - Asato Secondary School", "link": "https://wa.me/233302973870" },
+  { "name": "Global Senior High School", "link": "https://wa.me/233302981842" },
+  { "name": "Juaben Senior High School", "link": "https://wa.me/233540714210" },
+  { "name": "Miracle Senior High School", "link": "https://wa.me/233245231543" },
+  { "name": "Bright Senior High School", "link": "https://wa.me/233277171717" },
+  { "name": "Osei Tutu Senior High School", "link": "https://wa.me/233547472237" },
+  { "name": "Ada Senior High Technical School", "link": "https://wa.me/233241319248" },
+  { "name": "Mawuko Girls Senior High School", "link": "https://wa.me/233247117210" },
+  { "name": "Osei Kyeretwie Senior High School", "link": "https://wa.me/233302105498" },
+  { "name": "New Juaben Senior High Commercial School", "link": "https://wa.me/233342024410" },
+  { "name": "Akpafu Senior High Technical", "link": "https://wa.me/233545550559" },
+  { "name": "Church Of Christ Senior High School", "link": "https://wa.me/233244818358" },
+  { "name": "Juaben Senior High School", "link": "https://wa.me/233540714210" },
+  { "name": "St Anthony of Padua Senior High Technical School", "link": "https://wa.me/233242132681" },
+  { "name": "Mangoase Secondary School", "link": "https://wa.me/233245248937" },
+  { "name": "Mfantsipim School", "link": "https://wa.me/233244748992" },
+  { "name": "Taviefe Senior High School", "link": "https://wa.me/233247096768" },
+  { "name": "Dabala Senior High School", "link": "https://wa.me/233249507991" },
+  { "name": "Nsutaman Catholic Senior High School", "link": "https://wa.me/233554350006" },
+  { "name": "Axim Girls Senior High School", "link": "https://wa.me/233244789793" },
+  { "name": "BEREKUM STAR SENIOR HIGH SCHOOL", "link": "https://wa.me/233209149762" },
+  { "name": "Hope and Faith Senior High School", "link": "https://wa.me/233244539324" },
+  { "name": "Abomosu STEM Senior High School", "link": "https://wa.me/233204143424" },
+  { "name": "Ghanatta Secondary School", "link": "https://wa.me/233302767266" },
+  { "name": "Akrofuom Senior High Technical School", "link": "https://wa.me/233244055393" },
+  { "name": "SENYA SENIOR HIGH SCHOOL", "link": "https://wa.me/233245940586" },
+  { "name": "St. Andrew's Senior High School", "link": "https://wa.me/233545451110" },
+  { "name": "Krobo Girls Presbyterian Senior High School", "link": "https://wa.me/233233159211" },
+  { "name": "Tweneboa Kodua Senior High School", "link": "https://wa.me/233239635996" },
+  { "name": "PEKI SENIOR HIGH SCHOOL(PESCO)", "link": "https://wa.me/233544270353" },
+  { "name": "Nkoranza Effah Presby Junior High School,Nkoranza,Ghana", "link": "https://wa.me/233243982683" },
+  { "name": "SERWAA KESSE GIRLS SENIOR HIGH SCHOOL", "link": "https://wa.me/233243832368" },
+  { "name": "AMOANA PRASO SENIOR HIGH SCHOOL", "link": "https://wa.me/233245042008" },
+  { "name": "Offinso State A Junior High School", "link": "https://wa.me/233244180931" },
+  { "name": "Tijjaniya Senior High school", "link": "https://wa.me/233274462941" },
+  { "name": "St. Paul's Senior High School", "link": "https://wa.me/233507696119" },
+  { "name": "St. Peter's Senior High School", "link": "https://wa.me/233248814310" },
+  { "name": "Aburi Girls' Senior High School", "link": "https://wa.me/233556384254" },
+  { "name": "Bueman Senior High School", "link": "https://wa.me/233243268412" },
+  { "name": "Boakye Tromo Senior High School", "link": "https://wa.me/233245745184" },
+  { "name": "Tanyigbe Senior High School", "link": "https://wa.me/233209091616" },
+  { "name": "Accra Girls Senior High School", "link": "https://wa.me/233303942281" },
+  { "name": "Adjena Senior High/Technical School", "link": "https://wa.me/233553163648" },
+  { "name": "CHRISTIAN METHODIST SENIOR HIGH SCHOOL", "link": "https://wa.me/233549176965" },
+  { "name": "Simms Senior High School", "link": "https://wa.me/233557123463" },
+  { "name": "Accra Academy", "link": "https://wa.me/233302221721" },
+  { "name": "Mount Sinai Senior High School", "link": "https://wa.me/233244101010" },
+  { "name": "Swedru Senior High School", "link": "https://wa.me/233332191515" },
+  { "name": "Salaga Senior High School Sass", "link": "https://wa.me/233509897368" },
+  { "name": "Bonwire Senior High Technical School", "link": "https://wa.me/233543222100" },
+  { "name": "Pope John Senior High School and Minor Seminary", "link": "https://wa.me/233243158858" },
+  { "name": "Mankranso Senior High School (Great Mansec)", "link": "https://wa.me/233540817121" },
+  { "name": "Owerriman Senior High Technical School", "link": "https://wa.me/233593625828" },
+  { "name": "YILO KROBO SENIOR HIGH & COMMERCIAL SCHOOL", "link": "https://wa.me/233559272615" },
+  { "name": "Abetifi Senior High School", "link": "https://wa.me/233307865261" },
+  { "name": "Mfantsiman Girls Senior High School", "link": "https://wa.me/233556241100" },
+  { "name": "Some Senior High School", "link": "https://wa.me/233244105546" },
+  { "name": "Nkonya Senior High School", "link": "https://wa.me/233554104276" },
+  { "name": "Kumasi Girls' Senior High School", "link": "https://wa.me/233552488155" },
+  { "name": "Ejuraman Anglican Senior High School", "link": "https://wa.me/233243307303" },
+  { "name": "Klo Agogo Senior High School", "link": "https://wa.me/233243137970" },
+  { "name": "Apam Senior High School", "link": "https://wa.me/233551452934" },
+  { "name": "Sunyani Senior High School", "link": "https://wa.me/233508719396" },
+  { "name": "Odorgonno Secondary School", "link": "https://wa.me/233244502350" },
+  { "name": "Opoku Ware School", "link": "https://wa.me/233322023825" },
+  { "name": "St.John's Grammar Senior High School", "link": "https://wa.me/233245952924" },
+  { "name": "St. Thomas Aquinas Senior High School", "link": "https://wa.me/233302776801" },
+  { "name": "St James Seminary And Senior High School", "link": "https://wa.me/233352290374" },
+  { "name": "Ghana Senior High School", "link": "https://wa.me/233203709095" },
+  { "name": "Nsawkaw State Senior High School", "link": "https://wa.me/233246227442" },
+  { "name": "O'Reilly Senior High School", "link": "https://wa.me/233208177270" },
+  { "name": "ISTIQAAMA SENIOR HIGH SCHOOL", "link": "https://wa.me/233208504586" },
+  { "name": "Barekese Senior High School", "link": "https://wa.me/233243471985" },
+  { "name": "Labone Senior High School", "link": "https://wa.me/233540843351" },
+  { "name": "Sekyedumase Senior High School - Bhengg", "link": "https://wa.me/233208788556" },
+  { "name": "Accra High School", "link": "https://wa.me/233302224737" },
+  { "name": "Presbyterian Boys' Secondary School", "link": "https://wa.me/233302500945" },
+  { "name": "Nkawkaw Senior High School", "link": "https://wa.me/233343122204" },
+  { "name": "Adankwman shs", "link": "https://wa.me/233558223605" },
+  { "name": "St Margaret Mary Senior High", "link": "https://wa.me/233556384254" },
+  { "name": "Tamale Senior High School", "link": "https://wa.me/233249943868" },
+  { "name": "AMASAMAN Senior High Technical School", "link": "https://wa.me/233560152049" },
+  { "name": "Bimbilla Senior High School", "link": "https://wa.me/233242721179" },
+  { "name": "Boa Amponsem Senior High School", "link": "https://wa.me/233504888924" },
+  { "name": "Nkwanta Senior High School", "link": "https://wa.me/233545167983" },
+  { "name": "Archbishop Porter Girls' Secondary School", "link": "https://wa.me/233302512869" },
+  { "name": "St Louis Senior High School", "link": "https://wa.me/233547800131" },
+  { "name": "Ghanata Secondary School (Senior High)", "link": "https://wa.me/233247016143" },
+  { "name": "KNUST Senior High School", "link": "https://wa.me/233247270433" },
+  { "name": "Namong Senior High/Technical school", "link": "https://wa.me/233554208142" },
+  { "name": "Tarkwa Senior High School (TARSCO)", "link": "https://wa.me/233557156018" },
+  { "name": "Mpraeso Senior High School", "link": "https://wa.me/233342099867" },
+  { "name": "Kumasi Senior High Technical School", "link": "https://wa.me/233243346180" },
+  { "name": "Sogakope Senior High School", "link": "https://wa.me/233244153806" },
+  { "name": "Holy Child School", "link": "https://wa.me/233332132733" },
+  { "name": "Ejisu Senior High Technical School", "link": "https://wa.me/233546354802" },
+  { "name": "Ghana Christian International High School", "link": "https://wa.me/233307079798" },
+  { "name": "Keta Senior High Technical School", "link": "https://wa.me/233552663685" },
+  { "name": "Wesley Girls' High School", "link": "https://wa.me/233502288449" },
+  { "name": "GHANA SENIOR HIGH SCHOOL, TAMALE, GHANA", "link": "https://wa.me/233246838726" },
+  { "name": "Zamse Senior High Technical School", "link": "https://wa.me/233545439631" },
+  { "name": "Ghana College Senior High Technical School", "link": "https://wa.me/233541193158" },
+  { "name": "Ntruboman Senior High School", "link": "https://wa.me/233248144528" },
+  { "name": "Mfantsiman Girls' Secondary School", "link": "https://wa.me/233332192017" },
+  { "name": "Nsawam Secondary School", "link": "https://wa.me/233342122146" },
+  { "name": "Kumasi High School", "link": "https://wa.me/233244198684" },
+  { "name": "Ahamansu Islamic Senior High School", "link": "https://wa.me/233246507100" },
+  { "name": "Hwidiem Senior High School", "link": "https://wa.me/233243216530" },
+  { "name": "Apostolic Senior High School, Teshie", "link": "https://wa.me/233242801995" },
+  { "name": "Ghana National College", "link": "https://wa.me/233553646952" },
+  { "name": "KWARTENG ANKOMAH SENIOR HIGH SCHOOL", "link": "https://wa.me/233242188993" },
+  { "name": "Tepa Senior High School", "link": "https://wa.me/233277858643" },
+  { "name": "Kurofa Methodist Senior High/ Technical School", "link": "https://wa.me/233322392741" },
+  { "name": "Our Lady of Grace Senior High School", "link": "https://wa.me/233558093814" },
+  { "name": "Vakpo Senior High School", "link": "https://wa.me/233541642313" },
+  { "name": "Akro Senior High Technical School", "link": "https://wa.me/233249096958" },
+  { "name": "Odumaseman Senior High School", "link": "https://wa.me/233243929295" },
+  { "name": "Samuel Otu Presbyterian Senior High school", "link": "https://wa.me/233200120900" },
+  { "name": "Dompoase Senior High School", "link": "https://wa.me/233542812351" },
+  { "name": "Oduko Boatemaa Senior High School", "link": "https://wa.me/233244195118" },
+  { "name": "Agona Senior High Technical School", "link": "https://wa.me/233322096498" },
+  { "name": "Ada Senior High School", "link": "https://wa.me/233302837271" }
+]
+
+
+// Message template
+const messageTemplate = (schoolName) => {
+    return `Hello,\n\nHow are you doing today?\n\nIs this ${schoolName}?\n\n`;
+    // I hope this message finds you well. My name is Jephthah from PrinceJetro Web Consult, and I wanted to inform you about an exciting opportunity for your school.\n\nWe specialize in building and customizing websites for educational institutions like yours, with a focus on functionality, user experience, and modern design.\n\nWhether you need a new website or want to revamp your existing one, we offer competitive prices and high-quality service to meet your needs.\n\nHaving a professional and user-friendly website is crucial for showcasing your school's offerings, engaging with students and parents, and enhancing your online presence.\n\nIf you're interested in learning more about our services and how we can help elevate your school's online presence, please feel free to reach out to us.\n\nThank you for your time, and we look forward to potentially working with you!\n\nBest regards,\nJephthah\nPrinceJetro Web Consult
+};
+
+// Create select element
+const selectElement = document.createElement('select');
+
+// Populate select options
+schoolslink.forEach(school => {
+    const optionElement = document.createElement('option');
+    optionElement.textContent = school.name;
+    optionElement.value = school.link;
+    selectElement.appendChild(optionElement);
+});
+
+// Append select element to body or any desired container
+document.body.appendChild(selectElement);
+
+// Function to open WhatsApp chat
+const openWhatsAppChat = () => {
+    const selectedLink = selectElement.value;
+    const selectedSchool = selectElement.options[selectElement.selectedIndex].textContent;
+    const message = messageTemplate(selectedSchool);
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `${selectedLink}?text=${encodedMessage}`;
+    window.open(whatsappLink, '_blank');
+};
+
+// Event listener to open WhatsApp chat on select change
+selectElement.addEventListener('change', openWhatsAppChat);
+    </script>
+</body>
+</html
